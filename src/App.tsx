@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
+
+import { useEffect } from 'react';
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { authRoutes, publicRoutes } from './Routes';
+import { fetchExchangeRates } from './http/API';
+
+import { useAppSelector, useAppDispatch } from './utils/hooks';
+import { setExchangeRates, setError, setUserData } from './redux/userReducer';
 
 function App() {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state?.user?.data?.name);
+
+  useEffect(() => {
+    fetchExchangeRates()
+      .then(response => {
+        dispatch(setExchangeRates(response.data));
+      },
+      )
+      .catch(error => dispatch(setError(error.message)));
+  }, [dispatch]);
+
+  useEffect(() => {
+    const localUserData = localStorage.getItem('user');
+    if (localUserData) {
+      const userData = JSON.parse(localUserData);
+      dispatch(setUserData(userData));
+    }
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header />
+      <div className="main">
+        <Routes>
+          {user && authRoutes.map(({ path, element }) =>
+            <Route key={path} path={path} element={element} />,
+          )}
+          {publicRoutes.map(({ path, element }) =>
+            <Route key={path} path={path} element={element} />,
+          )}
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }

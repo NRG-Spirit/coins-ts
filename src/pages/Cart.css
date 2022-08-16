@@ -1,0 +1,125 @@
+.cart_wrapper{
+   max-width: 1200px;
+   width: 50%;
+   margin: 1rem auto 0;
+   min-height: 100%;
+
+}
+.cart_wrapper p{
+  margin: 3rem 0 0;
+  text-align: center;
+}
+.cartItem_wrapper{
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(1, 1, 1, 0.2);
+}
+.cartItem_left{
+margin-left: 1rem;
+}
+.cartItem_title{
+  margin: 1rem 0 0 0;
+  font-weight: 700;
+  text-transform: uppercase;
+
+}
+.cartItem_year{
+  font-weight: 500;
+  font-style: italic;
+}
+.cartItem_right{
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+
+}
+.cartItem_price{
+  font-size: 1.5rem;
+}
+.cartItem_image{
+  width: 100px;
+  margin: 1rem 1rem 0 1rem;
+}
+.cartItem_image img{
+  width: 100%;
+}
+.cartItem_delete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  color: white;
+  width: 40px;
+  height: 30px;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: none;
+}
+.cartItem_delete:hover{
+  transform: scale(1.1);
+}
+.cartItem_delete:active{
+  transform: scale(0.9);
+}
+.cart_confirmation{
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(1, 1, 1, 0.2);
+}
+.cart_totalTitle{
+  margin: 0 0 0 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.cart_total{
+  display: flex;
+  align-items: center;
+}
+.cart_totalPrice{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.cart_confirmBTN{
+  margin: 1rem 1rem;
+  height: 30px;
+  width: 100px;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  background: gold;
+}
+.cart_confirmBTN:hover{
+  transform: scale(1.1);
+}
+.cart_confirmBTN:active{
+  transform: scale(0.9);
+}
+
+@media (max-width: 767px) {
+  .cart_wrapper{
+    width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .cart_wrapper{
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .cartItem_wrapper{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartItem_left{
+    text-align: center;
+  }
+  .cart_totalPrice{
+    font-size: 1.2rem;
+  }
+
+}

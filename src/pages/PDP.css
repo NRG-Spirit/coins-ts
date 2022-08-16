@@ -1,0 +1,164 @@
+.pdp_wrapper{
+   max-width: 1200px;
+   margin: 1rem auto 0;
+   min-height: 100%;
+   display: flex;
+}
+.pdp_left{
+   width: 50%;
+   min-width: 300px;
+   margin-left: 1rem;
+}
+.pdpCoin_img{
+   width: 100%;
+   position: relative;
+}
+.pdpCoin_mainImg{
+   width: 80%;
+}
+.pdpCoin_additionalImg{
+   width: 25%;
+   border-radius: 50%;
+   overflow: hidden;
+   animation: Imgprev-spin infinite 20s linear;
+   cursor: pointer;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+@keyframes Imgprev-spin {
+   from {
+     transform: rotate(0deg);
+   }
+   to {
+     transform: rotate(360deg);
+   }
+ }
+ .pdp_img{
+   width: 100%;
+}
+.pdp_mainImg{
+   width: 80%;
+}
+ .pdp_description{
+   font-family: 'Edu SA Beginner', cursive;
+ }
+ .pdp_right{
+   width: 50%;
+   margin-right: 1rem;
+ }
+ .pdp_title{
+   width: 100%;
+   font-size: 3rem;
+   margin: 0 0 0 1rem;
+   text-align: center;
+   font-weight: 700;
+   font-family: 'Edu SA Beginner';
+ }
+ .pdp_year{
+   text-align: center;
+   font-size: 2rem;
+   margin: 0 0 1rem 1rem;
+ }
+ .pdp_text{
+   font-size: 1rem;
+ }
+ .pdp_info{
+   margin: 1rem 0 0 2rem;
+   font-size: 1.5rem;
+ }
+ .pdp_conditionBlock{
+   margin: 1rem 0 0 2rem;
+   font-size: 1.5rem;
+   display: flex;
+   align-items: flex-end;
+ }
+ .pdp_condition{
+   margin-left: 1rem;
+   width: 70px;
+   border-radius: 1rem;
+   text-align: center;
+   line-height: 1.2;
+   color: white;
+ }
+ .pdp_price{
+   margin: 1rem 0 0 2rem;
+   font-size: 1.5rem;
+ }
+ .pdp_butttons{
+   width: 100%;
+   margin: 2rem 0 0 2rem;
+   display: flex;
+   justify-content: center;
+ }
+ .pdp_inCart,
+ .pdp_back {
+   width: 150px;
+   cursor: pointer;
+   border-radius: 0.3rem;
+   color: #fff;
+   height: 30px;
+   border: none;
+   background: rgb(135, 176, 0);
+   margin: 0 1rem 0 0;
+ }
+ .pdp_back{
+   background: rgb(150, 0, 70);
+ }
+ .pdp_inCart:hover,
+ .pdp_back:hover {
+   transform: scale(1.1);
+ }
+ .pdp_inCart:active,
+ .pdp_back:active {
+   transform: scale(0.9);
+ }
+ @media (max-width: 767px) {
+  .pdp_wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .pdp_mainImg{
+    width: 100%;
+    margin: 1rem 0 0;
+ }
+  .pdp_title{
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .pdp_description{
+    display: none;
+  }
+  .pdp_left{
+    width: 75%;
+    margin-right: 1rem;
+  }
+  .pdp_right{
+    width: 75%;
+    margin-left: 1rem;
+  }
+  .pdp_butttons{
+    margin-bottom: 1rem;
+  }
+ }
+ @media (max-width: 600px) {
+  .pdp_title{
+    font-size: 1.5rem;
+  }
+  .pdp_left{
+    width: 90%;
+  }
+  .pdp_right{
+    width: 90%;
+  }
+  .pdp_inCart,
+  .pdp_back {
+    width: 100px;
+  }
+  .pdp_butttons{
+    margin: 1rem 0;
+  }
+  .pdp_back {
+    margin-right: 0;
+  }
+ }
