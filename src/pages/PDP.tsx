@@ -77,9 +77,7 @@ function PDP() {
                   </>
                }
                <div className="pdp_price">
-                  <span className="pdp_text">
-                     Цена:
-                     </span>
+                  <span className="pdp_text">Цена: </span>
                         {Math.round(product.price * currentCurrency.ratio * 100) / 100} {currentCurrency.label}
                   </div>
                <div className="pdp_butttons">

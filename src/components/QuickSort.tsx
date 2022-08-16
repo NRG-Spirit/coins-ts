@@ -13,11 +13,11 @@ export default function QuickSort () {
     dispatch(setOrder('desc'));
   }
   function sortYearUp(){
-    dispatch(setSort('year'));
+    dispatch(setSort('sortingYear'));
     dispatch(setOrder('asc'));
   }
   function sortYearDown(){
-    dispatch(setSort('year'));
+    dispatch(setSort('sortingYear'));
     dispatch(setOrder('desc'));
   }
 

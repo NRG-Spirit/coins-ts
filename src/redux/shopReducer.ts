@@ -36,9 +36,11 @@ const shopSlice = createSlice({
       },
       setSort: (state, action:PayloadAction<string>) => {
          state.filter._sort = action.payload;
+         state.filter._page = 1;
       },
       setOrder: (state, action:PayloadAction<string>) => {
          state.filter._order = action.payload;
+         state.filter._page = 1;
       },
       setRegion: (state, action:PayloadAction<string>) => {
          state.filter.region = action.payload;

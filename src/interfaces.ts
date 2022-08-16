@@ -11,6 +11,7 @@ interface UserData {
    category:string
    title:string
    year:string
+   sortingYear: number
    denomination:string
    region:string
    condition:string

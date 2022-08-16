@@ -94,6 +94,7 @@
  .pdp_inCart,
  .pdp_back {
    width: 150px;
+   min-width: 130px;
    cursor: pointer;
    border-radius: 0.3rem;
    color: #fff;
