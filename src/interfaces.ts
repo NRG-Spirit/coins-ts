@@ -43,4 +43,4 @@ interface UserData {
    Product,
    CurrencyType,
    Filter,
- }
+ };
