@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter as Router, MemoryRouter } from 'react-router-dom';
 
-import axios from 'axios';
-
 import App from './App';
 
 import { store } from './redux/store';
@@ -14,6 +12,7 @@ import goodsSlice, { setGoods, setGoodsError, setTotalCount } from './redux/good
 import shopSlice, { setPage, setLimit, setSort, setOrder, setRegion, setCondition } from './redux/shopReducer';
 
 import { fetchProducts, fetchExchangeRates } from './http/API';
+
 
 test('renders App component', () => {
   render(
@@ -120,9 +119,6 @@ describe('reducers', () => {
 });
 
 describe('fetchExchangeRates', () => {
-  jest.mock('axios');
-  const mockedAxios = axios as jest.Mocked<typeof axios>;
-  const mock = jest.spyOn(axios, 'get');
   it('fetches data successfully from an api', () => {
     const rates = [
       {
@@ -146,7 +142,6 @@ describe('fetchExchangeRates', () => {
         'ratio': 0.83,
       },
     ] ;
-      (axios.get as jest.Mock).mockResolvedValue({data:rates});
       return fetchExchangeRates().then(resp => expect(resp.data).toEqual(rates));
   });
 });
